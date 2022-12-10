@@ -93,11 +93,8 @@ class MPGS_Direct_Payment {
         // Prepare session request object
         $session_request = array();
 
-        if((int) $this->api_version >= 62) {
+        if((int) $this->api_version >= 62) 
             $session_request['initiator']['userId']     = 123;
-        } else {
-            $session_request['userId']                  = 123;
-        }
 
         $session_request['order']['id']                 = $this->order_id;
         $session_request['order']['amount']             = $this->order_amount;
